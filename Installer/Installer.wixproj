@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <UsingTask AssemblyFile="Binary\MyTasks.dll" TaskName="GetVersion" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VisualStudioFlavor Condition="'$(VisualStudioVersion)' == '15.0' Or '$(VisualStudioVersion)' == '16.0'">Community</VisualStudioFlavor>
+    <VisualStudioYear Condition="'$(VisualStudioVersion)' == '15.0'">2017</VisualStudioYear>
+    <VisualStudioYear Condition="'$(VisualStudioVersion)' == '16.0'">2019</VisualStudioYear>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProductVersion>3.0</ProductVersion>
+    <ProjectGuid>{f533fc43-6c05-4a64-8af6-72b690eb06c3}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>MySql.VisualStudio.Plugin</OutputName>
+    <OutputType>Package</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'GPL' ">
+    <IntermediateOutputPath>obj\GPL\</IntermediateOutputPath>
+    <OutputPath>bin\GPL\</OutputPath>
+    <DefineConstants>IsGPL=1</DefineConstants>
+    <Cultures>en-US</Cultures>
+    <Pedantic>False</Pedantic>
+    <ShowSourceTrace>False</ShowSourceTrace>
+    <SuppressSchemaValidation>False</SuppressSchemaValidation>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <VerboseOutput>False</VerboseOutput>
+    <AllowIdenticalRows>False</AllowIdenticalRows>
+    <CabinetCreationThreadCount>-1</CabinetCreationThreadCount>
+    <LeaveTemporaryFiles>False</LeaveTemporaryFiles>
+    <LinkerPedantic>False</LinkerPedantic>
+    <ReuseCabinetCache>False</ReuseCabinetCache>
+    <SetMsiAssemblyNameFileVersion>False</SetMsiAssemblyNameFileVersion>
+    <SuppressAclReset>False</SuppressAclReset>
+    <SuppressAssemblies>False</SuppressAssemblies>
+    <SuppressDefaultAdminSequenceActions>False</SuppressDefaultAdminSequenceActions>
+    <SuppressDefaultAdvSequenceActions>False</SuppressDefaultAdvSequenceActions>
+    <SuppressDefaultUISequenceActions>False</SuppressDefaultUISequenceActions>
+    <SuppressDroppingUnrealTables>False</SuppressDroppingUnrealTables>
+    <SuppressFileHashAndInfo>False</SuppressFileHashAndInfo>
+    <SuppressFiles>False</SuppressFiles>
+    <LinkerSuppressIntermediateFileVersionMatching>False</LinkerSuppressIntermediateFileVersionMatching>
+    <SuppressLayout>False</SuppressLayout>
+    <SuppressMsiAssemblyTableProcessing>False</SuppressMsiAssemblyTableProcessing>
+    <LinkerSuppressSchemaValidation>False</LinkerSuppressSchemaValidation>
+    <SuppressValidation>True</SuppressValidation>
+    <LinkerTreatWarningsAsErrors>False</LinkerTreatWarningsAsErrors>
+    <LinkerVerboseOutput>False</LinkerVerboseOutput>
+    <ConfigurationPath>Debug</ConfigurationPath>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(VisualStudioVersion)' == '16.0'">
+      <PropertyGroup>
+        <Framework>4.7.2</Framework>
+        <TargetFrameworkVersion>16.0v4.7.2</TargetFrameworkVersion>
+      </PropertyGroup>
+    </When>
+    <When Condition=" '$(VisualStudioVersion)' == '15.0'">
+      <PropertyGroup>
+        <Framework>4.6.1</Framework>
+        <TargetFrameworkVersion>15.0v4.6.1</TargetFrameworkVersion>
+      </PropertyGroup>
+    </When>
+  </Choose>
+  <PropertyGroup>
+    <MSBuildExe Condition=" '$(MSBuildExe)'=='' AND Exists('$(MSBuildBinPath)') ">"$(MSBuildBinPath)\msbuild.exe"</MSBuildExe>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="core.wxs" />
+    <Compile Include="EntityFramework.wxs" />
+    <Compile Include="ItemTemplates\VS15_CS_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_CS_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_Ent_CS_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_Ent_CS_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_Ent_VB_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_Ent_VB_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_Pro_CS_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_Pro_CS_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_Pro_VB_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_Pro_VB_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_VB_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS15_VB_WinForm_ItemTemplate.wxs" />
+	<Compile Include="ItemTemplates\VS16_CS_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_CS_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_Ent_CS_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_Ent_CS_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_Ent_VB_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_Ent_VB_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_Pro_CS_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_Pro_CS_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_Pro_VB_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_Pro_VB_WinForm_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_VB_Web_ItemTemplate.wxs" />
+    <Compile Include="ItemTemplates\VS16_VB_WinForm_ItemTemplate.wxs" />
+    <Compile Include="main.wxs" />
+    <Compile Include="ui.wxs" />
+    <Compile Include="visualstudio.wxs" />
+    <Compile Include="webproviders.wxs" />
+  </ItemGroup>
+  <Target Name="RetrieveIdentities">
+    <GetVersion Assembly="..\Source\MySql.VisualStudio\bin\$(TargetFrameworkVersion)\Release\mysql.visualstudio.dll" Format="{0}.{1}.{2}">
+      <Output TaskParameter="AsString" PropertyName="CurrentVersion" />
+    </GetVersion>
+    <CreateProperty Value="Version=$(CurrentVersion);$(DefineConstants)">
+      <Output TaskParameter="Value" PropertyName="DefineConstants" />
+    </CreateProperty>
+  </Target>
+  <ItemGroup>
+    <Folder Include="ItemTemplates" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixVSExtension">
+      <HintPath>$(WixExtDir)\WixVSExtension.dll</HintPath>
+      <Name>WixVSExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ItemTemplates\MySQLforVisualStudio.Item.vstman" />
+  </ItemGroup>
+  <Import Project="$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\MSBuild\Microsoft\WiX\v3.x\Wix.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <PropertyGroup>
+    <BuildDependsOn>BeforeBuild;RetrieveIdentities;$(BuildDependsOn)</BuildDependsOn>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <CallTarget Targets="RemoveProjectTemplatesVBFolder;RemoveProjectTemplatesFolder;CreateProjectTemplatesFolder;CreateProjectTemplatesVBFolder;" />
+    <ItemGroup>
+      <Mvc3CsharpTemplateFiles Include="..\Source\MySql.VisualStudio\ProjectTemplates\CSharp\MySQL\MySQL MVC 3 Project.zip\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <WinFormsCsharpTemplateFiles Include="..\Source\MySql.VisualStudio\ProjectTemplates\CSharp\MySQL\MySQL Windows Forms Project.zip\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <Mvc3VisualBasicTemplateFiles Include="..\Source\MySql.VisualStudio\ProjectTemplates\VisualBasic\MySQL\MySQL MVC 3 Project.zip\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <WinFormsVisualBasicTemplateFiles Include="..\Source\MySql.VisualStudio\ProjectTemplates\VisualBasic\MySQL\MySQL Windows Forms Project.zip\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <WinFormsCsharpItemTemplateFiles Include="..\Source\MySql.VisualStudio\ItemTemplates\CSharp\MySQL\MySQL_WinForm.zip\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <WebCsharpItemTemplateFiles Include="..\Source\MySql.VisualStudio\ItemTemplates\CSharp\MySQL\MySQL_Web.zip\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <WinFormsVBItemTemplateFiles Include="..\Source\MySql.VisualStudio\ItemTemplates\VisualBasic\MySQL\MySQL_VB_WinForm.zip\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <WebVBItemTemplateFiles Include="..\Source\MySql.VisualStudio\ItemTemplates\VisualBasic\MySQL\MySQL_VB_Web.zip\**" />
+    </ItemGroup>
+    <Zip Files="@(Mvc3CsharpTemplateFiles)" WorkingDirectory="..\Source\MySql.VisualStudio\ProjectTemplates\CSharp\MySQL\MySQL MVC 3 Project.zip" ZipFileName="..\ProjectTemplatesZipFolder\MySQL MVC 3 Project.zip" />
+    <Zip Files="@(WinFormsCsharpTemplateFiles)" WorkingDirectory="..\Source\MySql.VisualStudio\ProjectTemplates\CSharp\MySQL\MySQL Windows Forms Project.zip" ZipFileName="..\ProjectTemplatesZipFolder\MySQL Windows Forms Project.zip" />
+    <Zip Files="@(Mvc3VisualBasicTemplateFiles)" WorkingDirectory="..\Source\MySql.VisualStudio\ProjectTemplates\VisualBasic\MySQL\MySQL MVC 3 Project.zip" ZipFileName="..\ProjectTemplatesZipFolder\VisualBasic\MySQL MVC 3 Project.zip" />
+    <Zip Files="@(WinFormsVisualBasicTemplateFiles)" WorkingDirectory="..\Source\MySql.VisualStudio\ProjectTemplates\VisualBasic\MySQL\MySQL Windows Forms Project.zip" ZipFileName="..\ProjectTemplatesZipFolder\VisualBasic\MySQL Windows Forms Project.zip" />
+    <Zip Files="@(WinFormsCsharpItemTemplateFiles)" WorkingDirectory="..\Source\MySql.VisualStudio\ItemTemplates\CSharp\MySQL\MySQL_WinForm.zip" ZipFileName="..\ItemTemplatesZipFolder\MySQL_WinForm.zip" />
+    <Zip Files="@(WebCsharpItemTemplateFiles)" WorkingDirectory="..\Source\MySql.VisualStudio\ItemTemplates\CSharp\MySQL\MySQL_Web.zip" ZipFileName="..\ItemTemplatesZipFolder\MySQL_Web.zip" />
+    <Zip Files="@(WinFormsVBItemTemplateFiles)" WorkingDirectory="..\Source\MySql.VisualStudio\ItemTemplates\VisualBasic\MySQL\MySQL_VB_WinForm.zip" ZipFileName="..\ItemTemplatesZipFolder\MySQL_VB_WinForm.zip" />
+    <Zip Files="@(WebVBItemTemplateFiles)" WorkingDirectory="..\Source\MySql.VisualStudio\ItemTemplates\VisualBasic\MySQL\MySQL_VB_Web.zip" ZipFileName="..\ItemTemplatesZipFolder\MySQL_VB_Web.zip" />
+    <CallTarget Targets="Build461;Build472;" />
+  </Target>
+  <Target Name="RemoveProjectTemplatesVBFolder">
+    <RemoveDir Condition="Exists('../ProjectTemplatesZipFolder/VisualBasic')" Directories="..\ProjectTemplatesZipFolder\VisualBasic" ContinueOnError="false" />
+  </Target>
+  <Target Name="RemoveProjectTemplatesFolder" AfterTargets="RemoveProjectTemplatesVBFolder">
+    <RemoveDir Condition="Exists('../ProjectTemplatesZipFolder')" Directories="..\ProjectTemplatesZipFolder" ContinueOnError="false" />
+  </Target>
+  <Target Name="CreateProjectTemplatesFolder" AfterTargets="RemoveProjectTemplatesFolder">
+    <MakeDir Condition="!Exists('../ProjectTemplatesZipFolder')" Directories="..\ProjectTemplatesZipFolder" />
+  </Target>
+  <Target Name="CreateProjectTemplatesVBFolder" AfterTargets="CreateProjectTemplatesFolder">
+    <MakeDir Condition="!Exists('../ProjectTemplatesZipFolder/VisualBasic')" Directories="..\ProjectTemplatesZipFolder\VisualBasic" />
+  </Target>
+  <!-- Build VS Source Targets -->
+  <Target Name="Build461" Condition=" '$(VisualStudioVersion)' == '15.0' ">
+    <Message Text="Building VisualStudioVersion=15.0" Importance="high" />
+    <Exec Command="$(MSBuildExe) ../Source/MySql.VisualStudio/MySql.VisualStudio.csproj /p:Configuration=Release /p:Platform=AnyCPU /p:VisualStudioVersion=15.0" />
+  </Target>
+  <Target Name="Build472" Condition=" '$(VisualStudioVersion)' == '15.0' Or '$(VisualStudioVersion)' == '16.0' ">
+    <Message Text="Building VisualStudioVersion=15.0" Importance="high" />
+    <Exec Command="$(MSBuildExe) ../Source/MySql.VisualStudio/MySql.VisualStudio.csproj /p:Configuration=Release /p:Platform=AnyCPU /p:VisualStudioVersion=16.0" />
+  </Target>
+</Project>

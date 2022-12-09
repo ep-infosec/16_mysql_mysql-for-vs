@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioFlavor Condition="'$(VisualStudioVersion)' == '15.0' Or '$(VisualStudioVersion)' == '16.0'">Community</VisualStudioFlavor>
+    <VisualStudioYear Condition="'$(VisualStudioVersion)' == '15.0'">2017</VisualStudioYear>
+    <VisualStudioYear Condition="'$(VisualStudioVersion)' == '16.0'">2019</VisualStudioYear>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A746219A-78F3-4D53-8308-68DB3D13EF78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MySql.Debugger.VisualStudio</RootNamespace>
+    <AssemblyName>MySql.Debugger.VisualStudio</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <Choose>
+    <When Condition=" '$(VisualStudioVersion)' == '16.0'">
+      <PropertyGroup>
+        <ProductVersion>9.0.30729</ProductVersion>
+        <SchemaVersion>2.0</SchemaVersion>
+        <Framework>4.7.2</Framework>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <DefineConstants>NET_46_OR_GREATER;NET_461_OR_GREATER;NET_472_OR_GREATER</DefineConstants>
+      </PropertyGroup>
+    </When>
+    <When Condition=" '$(VisualStudioVersion)' == '15.0'">
+      <PropertyGroup>
+        <ProductVersion>9.0.30729</ProductVersion>
+        <SchemaVersion>2.0</SchemaVersion>
+        <Framework>4.6.1</Framework>
+        <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+        <DefineConstants>NET_46_OR_GREATER;NET_461_OR_GREATER</DefineConstants>
+      </PropertyGroup>
+    </When>
+  </Choose>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <BaseIntermediateOutputPath>obj\$(VisualStudioVersion)$(TargetFrameworkVersion)\</BaseIntermediateOutputPath>
+    <OutputPath>bin\$(VisualStudioVersion)$(TargetFrameworkVersion)\Debug\</OutputPath>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <BaseIntermediateOutputPath>obj\$(VisualStudioVersion)$(TargetFrameworkVersion)\</BaseIntermediateOutputPath>
+    <OutputPath>bin\$(VisualStudioVersion)$(TargetFrameworkVersion)\Release\</OutputPath>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <!-- References that applies for all VS versions -->
+  <ItemGroup>
+    <Reference Include="MySQL.Utility">
+      <HintPath>..\..\Dependencies\v4.5\Release\MySQL.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="MySql.Data">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\v4.5\Release\MySql.Data.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="..\MySql.Debugger\MySql.Debugger.csproj">
+    <Project>{1969DE06-EC8C-41CE-AAEE-F54B27D309BA}</Project>
+      <Name>MySql.Debugger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- References per specific VS version -->
+  <Choose>
+    <When Condition=" '$(VisualStudioVersion)' == '16.0'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.Debugger.Interop.16.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\Microsoft.VisualStudio.Debugger.Interop.16.0.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.Debugger.InteropA, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+          <HintPath>$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\Microsoft.VisualStudio.Debugger.InteropA.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.Shell.15.0, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\VSSDK\VisualStudioIntegration\Common\Assemblies\v4.0\Microsoft.VisualStudio.Shell.15.0.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.Shell.Framework, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.Shell.Framework.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(VisualStudioVersion)' == '15.0'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.Debugger.Interop.15.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\Microsoft.VisualStudio.Debugger.Interop.15.0.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.Debugger.InteropA, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+          <HintPath>$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\Microsoft.VisualStudio.Debugger.InteropA.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.Shell.15.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\VSSDK\VisualStudioIntegration\Common\Assemblies\v4.0\Microsoft.VisualStudio.Shell.15.0.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="..\MySql.VisualStudio\Properties\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AD7Breakpoint.cs" />
+    <Compile Include="AD7DebugErrorBreakpoint.cs" />
+    <Compile Include="AD7DebugErrorBreakpointResolution.cs" />
+    <Compile Include="AD7DebugExpression.cs" />
+    <Compile Include="AD7DebugExpressionContext.cs" />
+    <Compile Include="AD7DocumentContext.cs" />
+    <Compile Include="AD7Engine.cs" />
+    <Compile Include="AD7EnumDebugErrorBreakpoints.cs" />
+    <Compile Include="AD7Events.cs" />
+    <Compile Include="AD7Guids.cs" />
+    <Compile Include="AD7Process.cs" />
+    <Compile Include="AD7ProgramNode.cs" />
+    <Compile Include="AD7ProgramProvider.cs" />
+    <Compile Include="AD7Property.cs" />
+    <Compile Include="AD7StackFrame.cs" />
+    <Compile Include="DebuggerManager.cs" />
+    <Compile Include="Dialogs\StoredRoutineArgumentsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\StoredRoutineArgumentsDlg.designer.cs">
+      <DependentUpon>StoredRoutineArgumentsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRESULT.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer.Designer.cs">
+      <DependentUpon>Installer.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\StoredRoutineArgumentsDlg.resx">
+      <DependentUpon>StoredRoutineArgumentsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\MSBuild\$(VisualStudioVersion)\Bin\Microsoft.CSharp.targets" Condition="'$(VisualStudioVersion)' == '15.0' " />
+  <Import Project="$(ProgramFiles)\Microsoft Visual Studio\$(VisualStudioYear)\$(VisualStudioFlavor)\MSBuild\Current\Bin\Microsoft.CSharp.targets" Condition="'$(VisualStudioVersion)' == '16.0' " />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

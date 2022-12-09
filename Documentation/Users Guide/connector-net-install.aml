@@ -1,0 +1,135 @@
+<topic id="733e518a-a16a-4bc2-b767-831875f277b6" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <section address="connector-net-installation">
+      <title>MySql For Visual Studio Installation</title>
+      <content>
+        <autoOutline />
+        <para>
+    MySql for Visual Studio runs on any platform that supports the 
+	.NET framework. The .NET framework is primarily supported on recent
+	versions of Microsoft Windows.
+  </para>
+        <para>
+    MySql for Visual Studio is available for download through
+	the MySql for Windows Installer at
+    <externalLink><linkText>http://dev.mysql.com/downloads/installer/</linkText><linkUri>http://dev.mysql.com/downloads/installer/</linkUri></externalLink>.
+  </para>
+      </content>
+    </section>
+    <section address="connector-net-installation-windows">
+      <title>Installing MySql For Visual Studio</title>
+      <content>
+        <autoOutline />        
+        <para>
+      Before installing, ensure that your system is up to date,
+      including installing the latest version of the .NET Framework.
+    </para>
+      </content>
+    </section>
+    <section address="connector-net-installation-binary-windows-installer">
+      <title>Installing Connector/Net using the Installer</title>
+      <content>      
+        <para>
+        MySql for Visual Studio is installed through the use of a Windows
+        Installer (<literal>.msi</literal>) installation package, which
+        can be used to install MySql for Visual Studio on all Windows 
+		operating systems. 
+      </para>
+        <para>
+        To install MySql For Visual Studio:
+      </para>
+        <list class="ordered">
+          <listItem>
+            <para>
+            Double-click the MSI installer file extracted from the Zip
+            you downloaded. Click <math>Next</math> to start
+            the installation.
+          </para>
+          </listItem>
+          <listItem>
+            <para>
+            You must choose the type of installation to perform.
+          </para>
+            <para>
+            For most situations, the Typical installation is suitable.
+            Click the <math>Typical</math> button and proceed
+            to Step 5. A Complete installation installs all the
+            available files. To conduct a Complete installation, click
+            the <math>Complete</math> button and proceed to
+            step 5. To customize your installation, including choosing
+            the components to install and some installation options,
+            click the <math>Custom</math> button and proceed
+            to Step 3.
+          </para>
+            <para>
+            The MySql for Visual Studio installer will add the
+            neccessary assemblies to the Visual studio folders.
+            The installer will also create the necessary
+            links in the Start menu to the documentation and release
+            notes.
+          </para>
+          </listItem>
+          <listItem>
+            <para>
+            If you have chosen a custom installation, you can select the
+            individual components to install, including the core
+            interface component, supporting documentation (a CHM file)
+            samples and examples, and the source code. Select the items,
+            and their installation level, and then click
+            <math>Next</math> to continue the installation.
+          </para>            
+          </listItem>
+          <listItem>
+            <para>
+            You will be given a final opportunity to confirm the
+            installation. Click <math>Install</math> to copy
+            and install the files onto your machine.
+          </para>
+          </listItem>
+          <listItem>
+            <para>
+            Once the installation has been completed, click
+            <math>Finish</math> to exit the installer.
+          </para>
+          </listItem>
+        </list>
+        <para>
+        Unless you choose otherwise, MySql For Visual Studio is 
+		installed in <literal>C:\Program Files\MySQL\MySQL For Visual 
+		Studio X.X.X</literal>, where X.X.X is replaced with the version 
+        you are installing. 
+      </para>
+        <para>
+        Depending on your installation type, the installed components
+        will include some or all of the following components:
+      </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              Visual Studio Integration with 
+			  Server Explorer Window.
+          </para>
+          </listItem>       
+          <listItem>
+            <para>
+              Entity Framework Support for Database First
+            and Model First with MySql Databases.
+          </para>
+          </listItem>
+		  <listItem>
+            <para>
+              Web Configuration tool to
+			  set up the different web providers for MySql.
+          </para>
+          </listItem>
+		  <listItem>
+            <para>
+              MySql for Visual Studio documentation
+			  in CHM format.
+          </para>
+          </listItem>          
+        </list>      
+      </content>
+    </section>  
+  </developerConceptualDocument>
+</topic>

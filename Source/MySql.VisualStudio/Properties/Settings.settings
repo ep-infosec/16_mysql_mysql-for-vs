@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MySql.Data.VisualStudio.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MVCWizardConnection" Provider="MySql.Data.VisualStudio.MySqlForVisualStudioSettings" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="WinFormsWizardConnection" Provider="MySql.Data.VisualStudio.MySqlForVisualStudioSettings" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="NewProjectDialogSelected" Provider="MySql.Data.VisualStudio.MySqlForVisualStudioSettings" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="NewProjectSavedPath" Provider="MySql.Data.VisualStudio.MySqlForVisualStudioSettings" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="NewProjectLanguageSelected" Provider="MySql.Data.VisualStudio.MySqlForVisualStudioSettings" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Visual C#</Value>
+    </Setting>
+    <Setting Name="CreateDirectoryForSolution" Provider="MySql.Data.VisualStudio.MySqlForVisualStudioSettings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CreateNewSolution" Provider="MySql.Data.VisualStudio.MySqlForVisualStudioSettings" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Create new solution</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

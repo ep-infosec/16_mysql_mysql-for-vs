@@ -1,0 +1,32 @@
+<topic id="069908d6-c522-49cc-a854-32494f1de72b" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <section address="connector-net-versions">
+      <title>MySql For Visual Studio Versions</title>
+      <content>
+        <para>
+    The MySql for Visual Studio versions available are:
+  </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+        MySql for Visual Studio 1.0 includes support for Visual Studio
+		2008, 2010 and 2012 with MySQL Server 5.7, 5.6, 5.5, 5.1,
+        and 5.0. 
+        </para>
+        </listItem>
+        </list>
+      <alert class="note">
+        <para>
+      Version numbers for MySQL products are formatted as X.Y.Z, where
+      Z=0 indicates alpha, Z=1 indicates beta, and Z&gt;=2 indicates GA.
+      However, Windows tools (Control Panel, properties display) may
+      show the version numbers as XX.YY.ZZ. For example, the official
+      MySQL formatted version number 5.0.9 may be displayed by Windows
+      tools as 5.00.09. The two versions are the same; only the number
+      display format is different.
+    </para>
+        </alert>
+      </content>
+    </section>
+  </developerConceptualDocument>
+</topic>

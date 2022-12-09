@@ -1,0 +1,15 @@
+﻿<Window x:Class="MySql.Data.VisualStudio.DBExport.DbExportPanelWPF"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MySql.Data.VisualStudio.DBExport"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="Auto" Height="Auto" >
+    <Grid x:Name="MainGrid" Width="Auto" Height="Auto" >
+      <ScrollViewer x:Name="ScrollContainer" Height="775" Width="1232" >
+      <Grid x:Name="InnerGrid" Width="Auto" Height="Auto" GotFocus="InnerGrid_GotFocus" Loaded="InnerGrid_Loaded" >
+        </Grid>
+      </ScrollViewer>
+  </Grid>
+</Window>
